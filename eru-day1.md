@@ -30,8 +30,34 @@ The following introductory slideshow will be presented by Jay during the opening
 <br>
 
 
+## Day 1, Part 2: Intro to Arduinos, Sensors, and Actuators
+
+Follow along with this short presentation of the types of electronic components we'll be using in this module. Feel free to unpack your kit and check out the components.
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRGF9iiknpFD8UbYc0AZwdgcNO8SvpcMJ73Y5ASyecBScyvJuylV-xTP95J_hA42YNe1FkxRFMuXxhE/embed?start=false&loop=true&delayms=15000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
+## Day 1, Part 3: Getting Started
+Now that you've unpacked your kit, it's time to plug in your Arduino and begin using it. 
+### 1.3a Physically connect the Arduino
+- The Arduino can use the USB port to communicate with your computer, as well as draw power from is. Use the USB cable provided to connect the Arduino to your computer's USB port. If done correctly, the on-board LED labeled "**ON**" should light up. If this doesn't work, disconnect and attempt again. 
+- Depending on what program was uploaded to your Arduino board last, you may or may not see the on-board LED lalebeled "**L**" light up or flash. Arduinos will run its uploaded program upon power-up, and will continue to do so until the *reset* button is pressed, the power is disconnected, or the board breaks. 
+  - Note that the on-board LED lalebeled "**L**" is connected to digital input/output (IO) pin number 13; if the current program provides instructions for current to be provided to pin 13, it'll be reflected in the on-board LED (whether or not anything is connected to digital pin 13. 
+  
+### 1.3b Open the Arduino IDE; Connect to the Arduino board
+Once your Arduino is physically connected to your computer, open up the Arduino IDE program. Depending on your operating system, your Arduino may or may not be connected via a serial port (which allows for communication between the computer and the Arduino). 
+- You can check the status of your connection by clicking on >Tools>Port. 
+
+A physically connected Arduino should appear in the Serial Ports list as **COMX (Arduino UNO)** as shown below:
+
+![Arduino IDE with Ports window showing](images/arduino-port1.png "Arduino IDE Ports list -- Arduino not connected")
+
+To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
+![Arduino IDE with Ports window showing](images/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
+
+### Day 1, Part 4: 
+
+![Arduino IDE showing the blink program](images/opening-blink.png "Opening blink in the Arduino IDE")
 
 
 
