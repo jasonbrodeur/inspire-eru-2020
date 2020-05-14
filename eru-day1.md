@@ -75,6 +75,10 @@ In this exercise, you are going to upload your first program to the Arduino. For
 Sketch uses 924 bytes (2%) of program storage space. Maximum is 32256 bytes.
 Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.
 ```
+#### Question: 
+What is happening on your Arduino board 
+
+
 - If an error occurs, the status window will provide a general error message, and the info window will give additional information on it (you may need to scroll to see it). 
   - If the error occurred when uploading (i.e. a connection couldn't be made between the computer and the Arduino), the status window will read: *An error occurred while uploading the sketch*. 
   - If the error occurred when compiling the code (i.e. there's something wrong with your code), the status window will provide an error message, and the problematic line will be highlighted in the sketch. 
@@ -137,7 +141,29 @@ In this casee, there is no returned value (the term ```void``` is used to indica
 ### The loop function
 ![Arduino blink sketch setup function](images/blink-loop.png "Blink sketch loop function")
 
-As also indicated in the preceding comment, the loop function will run repeatedly for as long as the Arduino board is powered and operational.
+As also indicated in the preceding comment, the loop function will run repeatedly for as long as the Arduino board is powered and operational. The loop function uses the same form as described above, and contains four lines of executed commands. 
+
+#### Q2:
+- What instructions are each of these lines providing to the Arduino board?
+
+## Part 6: Modifying a sketch
+Can you figure out how to modify the Blink code so that 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Resistors 
 Use the attached image to answer the following questions: 
