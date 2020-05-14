@@ -45,7 +45,15 @@ Now that you've unpacked your kit, it's time to plug in your Arduino and begin u
   - Note that the on-board LED lalebeled "**L**" is connected to digital input/output (IO) pin number 13; if the current program provides instructions for current to be provided to pin 13, it'll be reflected in the on-board LED (whether or not anything is connected to digital pin 13. 
   
 ### 1.3b Open the Arduino IDE; Connect to the Arduino board
-Once your Arduino is physically connected to your computer, open up the Arduino IDE program. Depending on your operating system, your Arduino may or may not be connected via a serial port (which allows for communication between the computer and the Arduino). 
+Once your Arduino is physically connected to your computer, open up the Arduino IDE program. A new sketch window will appear. The sketch windows contains a number of different areas--their functions are shown below:
+
+![Arduino IDE with parts labeled](images/arduino-ide.png "The Arduino IDE")
+
+
+
+
+
+Depending on your operating system, your Arduino may or may not be connected via a serial port (which allows for communication between the computer and the Arduino). 
 - You can check the status of your connection by clicking on >Tools>Port. 
 
 A physically connected Arduino should appear in the Serial Ports list as **COMX (Arduino UNO)** as shown below:
@@ -55,7 +63,12 @@ A physically connected Arduino should appear in the Serial Ports list as **COMX 
 To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
 ![Arduino IDE with Ports window showing](images/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
 
-### Day 1, Part 4: 
+### Day 1, Part 4: Uploading and running a program
+
+In this exercise, you are going to upload your first program to the Arduino. For this case, we'll use one of the example programs that come with the Arduino IDE.
+- Go to >File>Examples>0.1Basics> and click on **Blink**. This will open up a new sketch (what Arduino calls its programs) with the Blink program. 
+- Ensuring that the Arduino is connected (both physically and through the COM port), 
+
 
 ![Arduino IDE showing the blink program](images/opening-blink.png "Opening blink in the Arduino IDE")
 
