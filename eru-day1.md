@@ -19,7 +19,7 @@ By the end of this module, you will be able to:
 - Create, edit, and version control files in a GitHub repository
 - Use GitHub Pages to share your results on an openly-accessible webpage
 
-## Day 1, Part 1: Introduction to the module
+## Part 1: Introduction to the module
 
 The following introductory slideshow will be presented by Jay during the opening class. It provides an overview of the module, its components, expectations, and deliverables. 
 
@@ -30,28 +30,24 @@ The following introductory slideshow will be presented by Jay during the opening
 <br>
 
 
-## Day 1, Part 2: Intro to Arduinos, Sensors, and Actuators
+## Part 2: Intro to Arduinos, Sensors, and Actuators
 
 Follow along with this short presentation of the types of electronic components we'll be using in this module. Feel free to unpack your kit and check out the components.
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRGF9iiknpFD8UbYc0AZwdgcNO8SvpcMJ73Y5ASyecBScyvJuylV-xTP95J_hA42YNe1FkxRFMuXxhE/embed?start=false&loop=true&delayms=15000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
-## Day 1, Part 3: Getting Started
+## Part 3: Getting Started
 Now that you've unpacked your kit, it's time to plug in your Arduino and begin using it. 
-### 1.3a Physically connect the Arduino
+### Physically connect the Arduino
 - The Arduino can use the USB port to communicate with your computer, as well as draw power from is. Use the USB cable provided to connect the Arduino to your computer's USB port. If done correctly, the on-board LED labeled "**ON**" should light up. If this doesn't work, disconnect and attempt again. 
 - Depending on what program was uploaded to your Arduino board last, you may or may not see the on-board LED lalebeled "**L**" light up or flash. Arduinos will run its uploaded program upon power-up, and will continue to do so until the *reset* button is pressed, the power is disconnected, or the board breaks. 
   - Note that the on-board LED lalebeled "**L**" is connected to digital input/output (IO) pin number 13; if the current program provides instructions for current to be provided to pin 13, it'll be reflected in the on-board LED (whether or not anything is connected to digital pin 13. 
   
-### 1.3b Open the Arduino IDE; Connect to the Arduino board
-Once your Arduino is physically connected to your computer, open up the Arduino IDE program. A new sketch window will appear. The sketch windows contains a number of different areas--their functions are shown below:
+### Open the Arduino IDE; Connect to the Arduino board
+Once your Arduino is physically connected to your computer, open up the Arduino IDE program. A new sketch window will appear. The sketch window contains a number of different areas, which are labeled below. You'll learn and use these functions througout the module.
 
 ![Arduino IDE with parts labeled](images/arduino-ide.png "The Arduino IDE")
-
-
-
-
 
 Depending on your operating system, your Arduino may or may not be connected via a serial port (which allows for communication between the computer and the Arduino). 
 - You can check the status of your connection by clicking on >Tools>Port. 
@@ -63,15 +59,65 @@ A physically connected Arduino should appear in the Serial Ports list as **COMX 
 To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
 ![Arduino IDE with Ports window showing](images/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
 
-### Day 1, Part 4: Uploading and running a program
+## Part 4: Uploading and running a program
 
+### Open the program "Blink"
 In this exercise, you are going to upload your first program to the Arduino. For this case, we'll use one of the example programs that come with the Arduino IDE.
 - Go to >File>Examples>0.1Basics> and click on **Blink**. This will open up a new sketch (what Arduino calls its programs) with the Blink program. 
-- Ensuring that the Arduino is connected (both physically and through the COM port), 
-
 
 ![Arduino IDE showing the blink program](images/opening-blink.png "Opening blink in the Arduino IDE")
 
+### Upload "Blink" to the Arduino
+- Ensuring that the Arduino is connected (both physically and through the COM port), click the upload button. 
+  - The status window should first indicate that it is *Compiling sketch*, and then indicate that it is *Uploading*.
+- If the upload was succesful, the status window will indicate *Done uploading*, and the info window will communicate the following (or similar):
+```
+Sketch uses 924 bytes (2%) of program storage space. Maximum is 32256 bytes.
+Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.
+```
+- If an error occurs, the status window will provide a general error message, and the info window will give additional information on it (you may need to scroll to see it). 
+  - If the error occurred when uploading (i.e. a connection couldn't be made between the computer and the Arduino), the status window will read: *An error occurred while uploading the sketch*. 
+  - If the error occurred when compiling the code (i.e. there's something wrong with your code), the status window will provide an error message, and the problematic line will be highlighted in the sketch. 
+
+## Part 5: Understanding an Arduino sketch
+The blink sketch provides a good opportunity to explore the three fundamental elements of an Arduino sketch. 
+
+### The commented preface
+![Arduino blink sketch comments](images/blink-comment.png "Blink sketch comments")
+
+The opening, grey-text section of the sketch is a block comment that contains human-readable information about the program. This section is ignored by the Arduino compiler, and its sole purpose is to provide humans (whether yourself or others) with more information on the code. Comments can be inserted into a sketch as a block using the ```/*``` and ```*/``` characters around the commented text, e.g:
+```
+/* 
+All of this is 
+a comment
+*/
+```
+
+Comments are an important part of writing and maintaining computer code, as it's often much easier to understand what the code is doing when there is plain, human-readable text accompanying it. It's also important to record your changes over time. Additionally, you can use comments to temporarily remove certain lines of code that you don't want to be executed.
+
+A good commented preface should contain some/all of the following information:
+- What the code does.
+- A description (or link to a diagram) of the circuit that it works alongside. 
+- Links to any other information.
+- Who created it, revised it, and when this was done.
+- Information on licensing / rights on the code.
+
+
+You'll also notice later in the sketch that comments are inserted on single lines (whether at the start or end) using the ```//``` characters: 
+```
+// This is a commented line
+```
+
+### The setup function
+![Arduino blink sketch setup function](images/blink-setup.png "Blink sketch setup function")
+
+As mentioned in the comment above it, the setup function runs a single time when the board is turned on, reset, or when a new program is uploaded to it. The purpose of the setup function is to declare constants and run commands that configure the Arduino board to operate as desired in the following loop function. The term ```void``` at the beginning of the function just indicates that this function doesn't return any values.
+
+#### Q1: 
+- In this example, the only line executed in the setup function is ```pinMode(LED_BUILTIN, OUTPUT);```. What does this line do? 
+
+### A1: 
+- ```pinmode``` is a built-in function that allows you to determine whether a given digital pin should be *INPUT* (receives current) or *OUTPUT* (delivers current). ```LED_BUILTIN``` is a built-in constant that 
 
 
 ## Resistors 
@@ -88,6 +134,35 @@ Q2. Identify the 10 Kohm resistors in your kit
 Q3. Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
 
 A3. Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
