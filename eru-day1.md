@@ -111,14 +111,33 @@ You'll also notice later in the sketch that comments are inserted on single line
 ### The setup function
 ![Arduino blink sketch setup function](images/blink-setup.png "Blink sketch setup function")
 
-As mentioned in the comment above it, the setup function runs a single time when the board is turned on, reset, or when a new program is uploaded to it. The purpose of the setup function is to declare constants and run commands that configure the Arduino board to operate as desired in the following loop function. The term ```void``` at the beginning of the function just indicates that this function doesn't return any values.
+As mentioned in the comment above it, the setup function runs a single time when the board is turned on, reset, or when a new program is uploaded to it. The purpose of the setup function is to declare constants and run commands that configure the Arduino board to operate as desired in the following loop function. 
+
+Note the general structure of a function used for the setup function (and other functions):
+
+```
+<returned_value> <name of function> (<input values>){
+first command; //commands end with a semicolon
+second command;
+third command;
+...
+} // curly braces contain the commands at the top and bottom
+```
+
+In this casee, there is no returned value (the term ```void``` is used to indicate this), the name of the function is *setup*, there are no input values (thus the empty parentheses), and there is only one command executed.
 
 #### Q1: 
-- In this example, the only line executed in the setup function is ```pinMode(LED_BUILTIN, OUTPUT);```. What does this line do? 
+- In this example, the only command executed in the setup function is ```pinMode(LED_BUILTIN, OUTPUT);```. What does this line do? 
 
-### A1: 
-- ```pinmode``` is a built-in function that allows you to determine whether a given digital pin should be *INPUT* (receives current) or *OUTPUT* (delivers current). ```LED_BUILTIN``` is a built-in constant that 
+#### A1: 
+- ```pinmode``` is a built-in function that allows you to determine whether a given digital pin should be *INPUT* (receives current) or *OUTPUT* (delivers current). 
+- The first *argument* to the function, ```LED_BUILTIN``` is a built-in constant that refers to digital pin 13, which is connected to the built-in LED on the Arduino board (labelled **"L"**). Note that you could replace ```LED_BUILTIN``` with ```13``` and it would work just the same. 
+- The second *argument*, ```OUTPUT```, indicates that digital pin 13 should be set to output current.
 
+### The loop function
+![Arduino blink sketch setup function](images/blink-loop.png "Blink sketch loop function")
+
+As also indicated in the preceding comment, the loop function will run repeatedly for as long as the Arduino board is powered and operational.
 
 ## Resistors 
 Use the attached image to answer the following questions: 
