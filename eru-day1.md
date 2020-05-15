@@ -139,7 +139,7 @@ In this casee, there is no returned value (the term ```void``` is used to indica
 - The second *argument*, ```OUTPUT```, indicates that digital pin 13 should be set to output current.
 
 ### The loop function
-![Arduino blink sketch setup function](images/blink-loop.png "Blink sketch loop function")
+![Arduino blink sketch loop function](images/blink-loop.png "Blink sketch loop function")
 
 As also indicated in the preceding comment, the loop function will run repeatedly for as long as the Arduino board is powered and operational. The loop function uses the same form as described above, and contains four lines of executed commands. 
 
@@ -164,8 +164,13 @@ If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in 
 - You probably noticed that it only worked in one direction. This is because an LED is a uni-directional device. Current must enter through the anode (connected to pin 13 in this case) and leave through the cathode (connected to GND in this case) for light to be generated. 
 - The anode and cathode can usually be identified with a couple of visual queues: The anode has a longer leg, and the cathode has a flattened plastic bottom brim. 
 
+![Image of LED](images/led.png "LED: Anode and Cathode")
 
-
+## Part 8: Building a proper circuit
+So, you may be asking yourself at this point: *"Is that the proper way to connect an LED?"*. This is an excellent question. To find the answer:
+- Navigate to the [Arduino tutorial page for Blink](https://www.arduino.cc/en/Tutorial/Blink) (which is provided in the comments of the Blink code)
+- Note the hardware required
+- Scroll down to view the circuit diagram
 
 
 
@@ -186,19 +191,33 @@ If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in 
 
 
 ## Resistors 
-Use the attached image to answer the following questions: 
-Q1. What colour code would be found on a 10 Kohm (10000 ohm) resistor using: 
-- Four bands?
-- Five bands?
+Resistors are important elements of circuits, as they control the flow of current through a circuit. This may be necessary to ensure that a connected device works properly, or to protect it from being damaged by current that is too high. The higher the resistance of a resistor, the more current is restricted through it. The unit of resistance is referred to as the ohm (symbol &#937). Resistors use colour codes to indicate their resistance value--these may be communicated using 4- 5- or 6-band systems. 
 
-A1. Use [resisto.rs](http://resisto.rs/) to assess your answer (enter ```10K``` into the box). A resource like [resisto.rs](http://resisto.rs/) is useful when you have a desired resistance and want to know the colour code.
+Here's a diagram demonstrating the 4- and 5-band systems: 
+![Resistor color code chart](images/resistor-codes.png "Resistor Colour Code Chart")
 
-Q2. Identify the 10 Kohm resistors in your kit
-- Hint: there may be a mix of 4- and 5-band codes used
+And here's a further explanation of the examples: 
+![Resistor color code chart](images/resistor-example.png "Resistor Colour Code Chart Explained")
 
-Q3. Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
 
-A3. Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
+
+
+#### Question 1
+Use the colour code above to answer the following questions: 
+- What colour code would be found on a 10 Kohm (10000 ohm) resistor using: 
+  - Four bands?
+  - Five bands?
+
+#### Answer 1
+Use [resisto.rs](http://resisto.rs/) to assess your answer (enter ```10K``` into the box). A resource like [resisto.rs](http://resisto.rs/) is useful when you have a desired resistance and want to know the colour code.
+
+#### Question 2
+Identify all of the 10 Kohm resistors in your kit
+- ***Hint***: there may be a mix of 4- and 5-band codes used
+
+#### Question 3
+Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
+- ***Hint:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
 
 
 
