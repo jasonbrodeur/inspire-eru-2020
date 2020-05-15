@@ -227,12 +227,31 @@ Create the proper blink circuit using:
 In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed). 
 - Open the Button sketch from the Arduino IDE at >File>Examples>0.2Digital> and click on **Button**
 - Navigate to the Arduino [Button tutorial page](https://www.arduino.cc/en/Tutorial/Button) to find the hardware requirements and circuit diagram.
+- Take a close look at the code, and try to make sense of the code.
 
 #### Notes
 1. This example uses the on-board LED at pin 13. If you'd like, leave your LED circuit wired into the breadboard from the Blink example--it'll light up when you push the button. 
 2. **How the button works**: The opposing legs of a button are connected to each other internally. When the button is not pushed in, the two sets of legs are not connected to each other. When the button is pushed, a metal gate closes to connect the two legs together, allowing current to flow from left to right across the button
 ![Arduino Button](images/button.png "Arduino Button")
 3. The 10K resistor serves as a pull-down resistor in this example, as it ensures that digital pin 2 is kept at LOW when the button is not pressed. Otherwise, the input may 'float', returning LOW and HIGH randomly, causing the LED to also blink randomly.  
+4. This example declares both constants (values that won't change) and variables (values that may). 
+  - The line ```const int buttonPin = 2;``` creates a constant (*const*) named *buttonPin* that is an integer (*int*, as opposed to other types--see [here](https://www.arduino.cc/en/Reference/VariableDeclaration) for more information), which has a value of 2. 
+  - The line  ```int buttonState = 0;``` creates a variable named *buttonState* that is an integer with an initial value of 0.
+5. In the line ```buttonState = digitalRead(buttonPin);```, the function *digitalRead* is used to read the state of the button on pin 2 (which is the value of buttonPin). The result (HIGH or LOW) is saved to the variable *buttonState*. 
+6. An *if* statement is used to control the output on the ledPin (digital pin 13) depending on the value of *buttonState*.
+  - An if statement takes the general form: 
+```
+if (condition1) {
+  // do Thing A
+}
+else if (condition2) {
+  // do Thing B
+}
+else {
+  // do Thing C
+}
+```
+See the [Arduino if-else reference guide](https://www.arduino.cc/reference/en/language/structure/control-structure/else/) for more information. 
 
 ## Part 11: Using a potentiometer
 In this example, you'll use a potentiometer (dial) to control the brightness of your LED. 
@@ -241,7 +260,20 @@ In this example, you'll use a potentiometer (dial) to control the brightness of 
 
 #### Notes
 1. In this example, the LED is connected to digital pin 9, which is one of six **pulse width modulation (PWM)** digital pins on the Arduino (denoted with a **"~"** symbol on the board). PWM allows a digital output (which is either LOW = OFF or HIGH = ON) to simulate an analog signal (which can assume any value between LOW and HIGH).
-![Digital vs. Analog Signals](images/digital-analog.png "Digital vs. Analog Signals")
+![Analog vs. Digital Signals](images/analog-digital.png "Analog vs. Digital Signals")
+2. The map function 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
