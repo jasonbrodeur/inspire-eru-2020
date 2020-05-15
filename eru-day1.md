@@ -214,7 +214,7 @@ The solderless breadboard allows you to create circuits quickly without the need
 
 Note in the example above that connections run horizontally across rows of 5 on the inner part of the breadboard, while connections run vertically down the outside columns. 
 
-#### Your task:
+#### Your tasks:
 Create the proper blink circuit using: 
 - The solderless breadboard
 - The LED from the first circuit
@@ -223,7 +223,9 @@ Create the proper blink circuit using:
 When you've succeeded, save your sketch to your local working folder with an appropriate name.
 
 ## Part 10: Using a button
-In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed). 
+In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed).
+
+#### Your tasks: 
 - Open the Button sketch from the Arduino IDE at >File>Examples>0.2Digital> and click on **Button**
 - Navigate to the Arduino [Button tutorial page](https://www.arduino.cc/en/Tutorial/Button) to find the hardware requirements and circuit diagram.
 - Take a close look at the code, and try to make sense of the code.
@@ -254,6 +256,8 @@ See the [Arduino if-else reference guide](https://www.arduino.cc/reference/en/la
 
 ## Part 11: Using a potentiometer
 In this example, you'll use a potentiometer (dial) to control the brightness of your LED. 
+
+#### Your tasks:
 - Open the AnalogInOutSerial sketch from the Arduino IDE at >File>Examples>03.Analog> and click on **AnalogInOutSerial**
 - Navigate to the Arduino [AnalogInOutSerial tutorial page](https://www.arduino.cc/en/Tutorial/AnalogInOutSerial) to find the hardware requirements and circuit diagram. **Note** that you'll need to connect your circuit using the solderless breadboard.
 - Once you've connected your circuit and succesfully uploaded your code, open up the serial monitor on the top-right of the IDE. 
@@ -266,7 +270,11 @@ In this example, you'll use a potentiometer (dial) to control the brightness of 
 3. In this example, you've used the Serial Console to establish and carry out serial communication between the Arduino and the computer. The setup function line ```Serial.begin(9600);``` establishes the connection, and the input argument (9600) in this case, determines the rate of information transfer, also known as the *baud* rate (9600 kilobits per second in this case). Clicking the dropdown on the bottom-right of the Serial Console displays the different baud rates that can be used. Note that the baud rate stated in the code needs to match that set in the Serial Console to receive intelligible output.
 
 ## Part 12: Potentiometer out, photoresistor in
+In this example, we’re going to work from the code and wiring from the previous example, and replace the potentimeter with a photoresistor. The point of this is to demonstrate how both of these items can be used as control devices by providing variable resistance. 
 
+#### Your tasks:
+
+#### Notes
 
 
 
