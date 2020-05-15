@@ -166,31 +166,15 @@ If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in 
 
 ![Image of LED](images/led.png "LED: Anode and Cathode")
 
-## Part 8: Building a proper circuit
-So, you may be asking yourself at this point: *"Is that the proper way to connect an LED?"*. This is an excellent question. To find the answer:
+## Part 8: Reviewing our circuit
+So, you may be asking yourself at this point: *"Is that the proper way to connect that LED?"*. This is an excellent question. To find the answer:
 - Navigate to the [Arduino tutorial page for Blink](https://www.arduino.cc/en/Tutorial/Blink) (which is provided in the comments of the Blink code)
 - Note the hardware required
-- Scroll down to view the circuit diagram
+- Scroll down to view the circuit diagram. **What's missing from our current circuit?**
 
+Before we move forward, you'll need to understand how to identify the proper resistor to place into the circuit. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Resistors 
+### Resistors 
 Resistors are important elements of circuits, as they control the flow of current through a circuit. This may be necessary to ensure that a connected device works properly, or to protect it from being damaged by current that is too high. The higher the resistance of a resistor, the more current is restricted through it. The unit of resistance is referred to as the ohm (symbol &#937). Resistors use colour codes to indicate their resistance value--these may be communicated using 4- 5- or 6-band systems. 
 
 Here's a diagram demonstrating the 4- and 5-band systems: 
@@ -198,9 +182,6 @@ Here's a diagram demonstrating the 4- and 5-band systems:
 
 And here's a further explanation of the examples: 
 ![Resistor color code chart](images/resistor-example.png "Resistor Colour Code Chart Explained")
-
-
-
 
 #### Question 1
 Use the colour code above to answer the following questions: 
@@ -219,9 +200,44 @@ Identify all of the 10 Kohm resistors in your kit
 Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
 - ***Hint:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
 
+## Part 9: Building a proper circuit
+Now that you've properly identified the resistor you need for this circuit, how are you going to connect the pieces?
+- You could attempt to twist the wires together, but you might break something and it won't be very reliable
+- You could solder the pieces together, but we're just experimenting here. 
+- **To connect this circuit, we're going to use a solderless breadboard**
+
+### Solderless breadboard**
+The solderless breadboard allows you to create circuits quickly without the need for soldering connections together. 
+- Metal strips run through the backside of the breadboard, which connect specific rows and columns together in a defined manner: 
+
+![Solderless breadboard](images/breadboard.png "Solderless Breadboard")
+
+Note in the example above that connections run horizontally across rows of 5 on the inner part of the breadboard, while connections run vertically down the outside columns. 
+
+#### Your task:
+Create the proper blink circuit using: 
+- The solderless breadboard
+- The LED from the first circuit
+- An appropriate resistor
+- Jumper cables to connect the breadboard to the Arduino pins.
 
 
 
+## Part 10: Using a button
+In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed). 
+- Open the Button sketch from the Arduino IDE at  >File>Examples>0.2Digital> and click on **Button**
+- Navigate to the Arduino [Button tutorial page](https://www.arduino.cc/en/Tutorial/Button) to find the hardware requirements and circuit diagram.
+
+#### Notes
+1. This example uses the on-board LED at pin 13. If you'd like, leave your LED circuit wired into the breadboard from the Blink example--it'll light up when you push the button. 
+2. **How the button works**: The opposing legs of a button are connected to each other internally. When the button is not pushed in, the two sets of legs are not connected to each other. When the button is pushed, a metal gate closes to connect the two legs together, allowing current to flow from left to right across the button
+![Arduino Button](images/button.png "Arduino Button")
+3. The 10K resistor serves as a pull-down resistor in this example, as it ensures that digital pin 2 is kept at LOW when the button is not pressed. Otherwise, the input may 'float', returning LOW and HIGH randomly, causing the LED to also blink randomly.  
+
+## Part 11: Using a potentiometer
+In this example, you'll use a potentiometer (dial) to control the brightness of your LED. 
+- Open the Button sketch from the Arduino IDE at  >File>Examples>03.Analog> and click on **AnalogInOutSerial**
+- Navigate to the Arduino [AnalogInOutSerial tutorial page](https://www.arduino.cc/en/Tutorial/AnalogInOutSerial) to find the hardware requirements and circuit diagram. **Note** that you'll need to connect your circuit using the solderless breadboard.
 
 
 
