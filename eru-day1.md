@@ -220,8 +220,7 @@ Create the proper blink circuit using:
 - The LED from the first circuit
 - An appropriate resistor
 - Jumper cables to connect the breadboard to the Arduino pins.
-
-
+When you've succeeded, save your sketch to your local working folder with an appropriate name.
 
 ## Part 10: Using a button
 In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed). 
@@ -257,11 +256,14 @@ See the [Arduino if-else reference guide](https://www.arduino.cc/reference/en/la
 In this example, you'll use a potentiometer (dial) to control the brightness of your LED. 
 - Open the AnalogInOutSerial sketch from the Arduino IDE at >File>Examples>03.Analog> and click on **AnalogInOutSerial**
 - Navigate to the Arduino [AnalogInOutSerial tutorial page](https://www.arduino.cc/en/Tutorial/AnalogInOutSerial) to find the hardware requirements and circuit diagram. **Note** that you'll need to connect your circuit using the solderless breadboard.
+- Once you've connected your circuit and succesfully uploaded your code, open up the serial monitor on the top-right of the IDE. 
+- Adjust (turn) the potentiometer and observe the changes to the LED, as well as the output in the Serial Monitor.
 
 #### Notes
-1. In this example, the LED is connected to digital pin 9, which is one of six **pulse width modulation (PWM)** digital pins on the Arduino (denoted with a **"~"** symbol on the board). PWM allows a digital output (which is either LOW = OFF or HIGH = ON) to simulate an analog signal (which can assume any value between LOW and HIGH).
+1. In this example, the LED is connected to digital pin 9, which is one of six **pulse width modulation (PWM)** digital pins on the Arduino (denoted with a **"~"** symbol on the board). PWM allows a digital output (which is either LOW = OFF or HIGH = ON) to simulate an analog signal (which can assume any value between LOW and HIGH). The command ```analogWrite``` is used instead of *digitalWrite* in this case, since we're writing an analog value to pin 9.
 ![Analog vs. Digital Signals](images/analog-digital.png "Analog vs. Digital Signals")
-2. The map function 
+2. The map function is very useful for scaling the range of one variable to another range. In this example, the analog signal (from the potentiometer) ranges between 0 and 1023, while the acceptable output range for the LED is 0 to 255. The map function proportionally scales the potentimeter value to a usable value for the LED. 
+3. In this example, you've used the Serial Console to establish and carry out serial communication between the Arduino and the computer. The setup function line ```Serial.begin(9600);``` establishes the connection, and the input argument (9600) in this case, determines the rate of information transfer. 
 
 
 
