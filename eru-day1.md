@@ -225,7 +225,7 @@ Create the proper blink circuit using:
 
 ## Part 10: Using a button
 In this example, you'll use a button to turn your LED on (when pushed) and off (when not pushed). 
-- Open the Button sketch from the Arduino IDE at  >File>Examples>0.2Digital> and click on **Button**
+- Open the Button sketch from the Arduino IDE at >File>Examples>0.2Digital> and click on **Button**
 - Navigate to the Arduino [Button tutorial page](https://www.arduino.cc/en/Tutorial/Button) to find the hardware requirements and circuit diagram.
 
 #### Notes
@@ -236,10 +236,12 @@ In this example, you'll use a button to turn your LED on (when pushed) and off (
 
 ## Part 11: Using a potentiometer
 In this example, you'll use a potentiometer (dial) to control the brightness of your LED. 
-- Open the Button sketch from the Arduino IDE at  >File>Examples>03.Analog> and click on **AnalogInOutSerial**
+- Open the AnalogInOutSerial sketch from the Arduino IDE at >File>Examples>03.Analog> and click on **AnalogInOutSerial**
 - Navigate to the Arduino [AnalogInOutSerial tutorial page](https://www.arduino.cc/en/Tutorial/AnalogInOutSerial) to find the hardware requirements and circuit diagram. **Note** that you'll need to connect your circuit using the solderless breadboard.
 
-
+#### Notes
+1. In this example, the LED is connected to digital pin 9, which is one of six **pulse width modulation (PWM)** digital pins on the Arduino (denoted with a **"~"** symbol on the board). PWM allows a digital output (which is either LOW = OFF or HIGH = ON) to simulate an analog signal (which can assume any value between LOW and HIGH).
+![Digital vs. Analog Signals](images/digital-analog.png "Digital vs. Analog Signals")
 
 
 
