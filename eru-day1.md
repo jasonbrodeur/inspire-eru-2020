@@ -147,7 +147,27 @@ As also indicated in the preceding comment, the loop function will run repeatedl
 - What instructions are each of these lines providing to the Arduino board?
 
 ## Part 6: Modifying a sketch
-Can you figure out how to modify the Blink code so that 
+Modify the Blink code so that the onboard LED blinks at a different frequency. **Remember** to save your code and upload it to the Arduino after you've modified it.
+
+- How fast can you make it blink? 
+- Can you make it blink at always-differing intervals? 
+
+## Part 7: Inserting an LED
+If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in the Arduino code) is also connected to digital pin 13 on your Arduino board. You can connect an LED to this pin in a circuit by connecting one leg to digital pin 13 and the other to the adjacent pin labeled **GND**.
+- The **GND** is the *ground* connection of the circuit. Circuits require a higher- and lower-voltage connection to permit current to pass through it. The ground pin often serves this purpose. In this case, digital pin 13 serves as the higher-voltage connection, and current flows from pin 13, through the LED and toward GND. 
+- Try connnecting one of your standard (two-legged) LEDs. If it doesn't work, turn it around and connect it the other way. 
+
+#### Question: 
+- What happened? Did it work in both directions? 
+
+#### Answer: 
+- You probably noticed that it only worked in one direction. This is because an LED is a uni-directional device. Current must enter through the anode (connected to pin 13 in this case) and leave through the cathode (connected to GND in this case) for light to be generated. 
+- The anode and cathode can usually be identified with a couple of visual queues: The anode has a longer leg, and the cathode has a flattened plastic bottom brim. 
+
+
+
+
+
 
 
 
